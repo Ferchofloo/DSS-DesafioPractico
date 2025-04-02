@@ -53,11 +53,12 @@ class Nomina
         ?>
         <div style="font-family: Arial, sans-serif; margin: 20px; border: 1px solid #ddd; padding: 20px;">
             <h2>Boleta de Pago</h2>
+            <div class="Foto">
             <img src="uploads/<?= basename($this->empleado["foto"]) ?>" alt="Foto del empleado"
                  style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;">
             <p><strong>Empleado:</strong> <?= $this->empleado["nombre"] ?></p>
             <p><strong>ID:</strong> <?= $this->empleado["id"] ?></p>
-
+            </div>
             <h3>Detalles del Pago</h3>
             <table style="width: 100%; border-collapse: collapse;">
                 <tr><td><strong>Salario Base</strong></td><td>$<?= number_format($this->empleado["salarioBase"], 2) ?></td></tr>

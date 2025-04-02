@@ -1,18 +1,1 @@
-{
-    "1": {
-        "id": 1,
-        "nombre": "Tommy",
-        "salarioBase": 2000,
-        "horasExtras": 2,
-        "prestamo": 400,
-        "foto": "uploads\/Bachiller.jpg"
-    },
-    "2": {
-        "id": 2,
-        "nombre": "Aurora",
-        "salarioBase": 3000,
-        "horasExtras": 2,
-        "prestamo": 0,
-        "foto": "uploads\/Veil of the Celestials.jpg"
-    }
-}
+[]
