@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sss", $nombre, $email, $contrasena);
 
     if ($stmt->execute()) {
-        $mensaje = "<p class='success'>Usuario registrado con éxito. <a href='login.php'>Ir a login</a></p>";
+        header("location: login.php");
     } else {
         $mensaje = "<p class='error'>Error: " . $stmt->error . "</p>";
     }
