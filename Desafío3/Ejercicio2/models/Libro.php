@@ -1,5 +1,5 @@
 <?php
-require_once "config/conexion.php";
+require_once __DIR__ . '/../config/conexion.php';
 
 class Libro {
     private $db;
@@ -35,6 +35,20 @@ class Libro {
         $stmt = $this->db->prepare("DELETE FROM libros WHERE id = ?");
         $stmt->bind_param("i", $id);
         return $stmt->execute();
+    }
+
+    public function existeTitulo($titulo, $excluirId = null) {
+        if ($excluirId) {
+            $stmt = $this->db->prepare("SELECT COUNT(*) as total FROM libros WHERE titulo = ? AND id != ?");
+            $stmt->bind_param("si", $titulo, $excluirId);
+        } else {
+            $stmt = $this->db->prepare("SELECT COUNT(*) as total FROM libros WHERE titulo = ?");
+            $stmt->bind_param("s", $titulo);
+        }
+
+        $stmt->execute();
+        $resultado = $stmt->get_result()->fetch_assoc();
+        return $resultado['total'] > 0;
     }
 }
 ?>
